@@ -17,27 +17,27 @@ define('jquery', function () {
 require(["core/ExploreTableau", "core/ExploreUtils"], function (ExploreTableau, ExploreUtils) {
     $(document).ready(function () {
 
-        var retailer = 'sainsburys';
+        var retailer = 'retailerOne';
 
-        // Create a Sainsbury Explore instance of ExploreTableau
-        var SainsburyEXP = ExploreTableau.getInstance({
+        // Create a retailerOne Explore instance of ExploreTableau
+        var RetailerOneEXP = ExploreTableau.getInstance({
             retailer_slug: retailer,
             vizHolder: '#vizHolder',
             drawMenuTabs: true
         });
 
-        // Sainsbury Explore events
+        // retailerOne Explore events
         $('#menu-items-' + retailer).on('click', 'a', function (e) {
-            SainsburyEXP.newDasboardTab(e);
+            RetailerOneEXP.newDasboardTab(e);
         });
         $('#export-excel').on('click', function (e) {
-            SainsburyEXP.exportCrossTab(e);
+            RetailerOneEXP.exportCrossTab(e);
         });
         $('#export-pdf').on('click', function (e) {
-            SainsburyEXP.exportPDFTab(e);
+            RetailerOneEXP.exportPDFTab(e);
         });
         $('#reset-btn').on('click', function (e) {
-            SainsburyEXP.resetWorkbook(e);
+            RetailerOneEXP.resetWorkbook(e);
         });
 
     });
